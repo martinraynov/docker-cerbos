@@ -15,10 +15,10 @@ services:
         traefik.enable: "true"
         traefik.backend: "cerbos_back"
         traefik.port: "3592"
-        # traefik.backend.healthcheck.path: /
-        # traefik.backend.healthcheck.interval: 1s
-        # traefik.backend.healthcheck.port: 3592
-        # traefik.backend.healthcheck.scheme: https
+        traefik.backend.healthcheck.path: /
+        traefik.backend.healthcheck.interval: 1s
+        traefik.backend.healthcheck.port: 3592
+        traefik.backend.healthcheck.scheme: http
     networks:
       - default
     volumes:
