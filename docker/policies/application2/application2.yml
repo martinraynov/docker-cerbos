@@ -2,13 +2,12 @@
 apiVersion: api.cerbos.dev/v1
 resourcePolicy:
   version: default
-  resource: contact
+  resource: application2
   rules:
     - actions: ["read", "create"]
       effect: EFFECT_ALLOW
       roles:
         - admin
-        - user
 
     - actions: ["update", "delete"]
       effect: EFFECT_ALLOW
@@ -18,7 +17,4 @@ resourcePolicy:
     - actions: ["update", "delete"]
       effect: EFFECT_ALLOW
       roles:
-        - user
-      condition:
-        match:
-          expr: request.resource.attr.owner == request.principal.id
+        - admin
